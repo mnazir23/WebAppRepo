@@ -1,23 +1,24 @@
-version: 0.1
+version: 0.2
 
 phases:
   install:
     commands:
-      - echo Nothing to do in the install phase...
-  pre_build:
-    commands:
-      - echo Nothing to do in the pre_build phase...
+        - python -m pip install Flask
   build:
     commands:
       - echo Build started on `date`
-      - mvn install
+      - echo Compiling the Python code...
+      - python test_app.py
   post_build:
     commands:
       - echo Build completed on `date`
-      - echo fa la la la lalalalalalalala
 artifacts:
   files:
+    - web.py
     - appspec.yml
-    - scripts/**/*
-    - target/javawebdemo.war
-  discard-paths: no
+    - templates/layout.html
+    - templates/test.html
+    - scripts/mkdir.sh
+    - scripts/start_flask.sh
+    - scripts/stop_flask1.sh
+    - scripts/stop_flask.py
