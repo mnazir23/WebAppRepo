@@ -4,7 +4,7 @@ phases:
   install:
     commands:
         - pip install --upgrade pip
-        - python -m pip install Flask
+        - pip install Flask
   build:
     commands:
       - echo Build started on `date`
